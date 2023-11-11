@@ -1,0 +1,90 @@
+body {
+    font-family: san-francisco-reg, sans-serif;
+}
+.titlu {
+    color: rgba(50,93,157,255);
+    text-align: center;
+    font-family: san-francisco-reg, sans-serif;
+    letter-spacing: 0.5px;
+    padding: 40px 0;
+    font-size: 60px; 
+}
+
+@font-face {
+    font-family: san-francisco-reg;
+    src: url(San\ Francisco/pro/SF-Pro-Display-Regular.otf);
+}
+
+#afl {
+    width: 60px;
+    position: relative;
+    top: 10px;
+}
+
+nav {
+    text-align: center;
+    font-family: san-francisco-reg, sans-serif;
+    position: relative;
+}
+
+a:not(.not-this-one) {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+a:not(.not-this-one):after {
+    content: "";
+    position: absolute;
+    background-color: rgba(226, 23, 41, 1);
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:not(.not-this-one):hover:after {
+    width: 100%;
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    font-size: 20px;
+}
+
+/* Style table headers */
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style table rows */
+td {
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/* Style the team name and add some spacing for the image */
+td img {
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+#team {
+    display: flex;
+    align-items: center;
+}

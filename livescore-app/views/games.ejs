@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>AFL App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/games.css">
+    <script src="hpjs.js"></script>
+</head>
+<body>
+    <div>
+        <nav>
+          <a class="not-this-one" href="/"><img id="afl" src="/images/AFL.png" alt="AFL Logo"/></a>
+          <label><button><a href="/standings">Standings</a></button></label>
+          <label><button><a href="/livescore">Live Score</a></button></label>
+        </nav>
+        <h1 class="titlu">FIXTURES</h1>
+      </div>
+    <div>
+        <% let prevRound; %>
+        <% games.forEach(function(game) { %>
+            <% if (game.round !== prevRound) { %>
+                <h2 id="round">Round <%= game.round %></h2>
+            <% } %>
+            <div class="game">
+                <div class="game-info">
+                    <img src="/images/<%= game.hteam %>.svg" alt="<%= game.hteam %>" />
+                    <p><%= game.hteam %></p>
+                        <div class="score">
+                            <p><%= game.hgoals %></p>
+                            <p>:</p>
+                            <p><%= game.agoals %></p>
+                        </div>
+                    <p><%= game.ateam %></p>
+                    <img src="/images/<%= game.ateam %>.svg" alt="<%= game.hteam %>" />
+                </div>                
+            </div>
+            <% prevRound = game.round; %>
+        <% }); %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+.titlu {
+    color: rgba(50,93,157,255);
+    text-align: center;
+    font-family: san-francisco-reg, sans-serif;
+    letter-spacing: 0.5px;
+    padding: 40px 0;
+    font-size: 60px; 
+}
+
+@font-face {
+    font-family: san-francisco-reg;
+    src: url(San\ Francisco/pro/SF-Pro-Display-Regular.otf);
+}
+
+.not-this-one {
+    width: 60px;
+    position: absolute;
+}
+
+nav {
+    text-align: center;
+    font-family: san-francisco-reg, sans-serif;
+}
+
+a:not(.not-this-one) {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+a:after {
+    content: "";
+    position: absolute;
+    background-color: rgba(226, 23, 41, 1);
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+}

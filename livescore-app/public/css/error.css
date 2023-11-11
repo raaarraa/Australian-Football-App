@@ -1,0 +1,100 @@
+.titlu {
+    color: rgba(226, 23, 41, 1);
+    text-align: center;
+    font-family: san-francisco-reg, sans-serif;
+    letter-spacing: 0.5px;
+    padding: 40px 0;
+    font-size: 60px; 
+}
+
+@font-face {
+    font-family: san-francisco-reg;
+    src: url(San\ Francisco/pro/SF-Pro-Display-Regular.otf);
+}
+
+#afl {
+    width: 60px;
+    position: relative;
+    top: 10px;
+}
+
+nav {
+    text-align: center;
+    font-family: san-francisco-reg, sans-serif;
+    position: relative;
+}
+
+a:not(.not-this-one) {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+a:not(.not-this-one):after {
+    content: "";
+    position: absolute;
+    background-color: rgba(226, 23, 41, 1);
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:not(.not-this-one):hover:after {
+    width: 100%;
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 100%;
+    align-items: center;
+}
+
+.team:hover {
+    cursor: pointer;
+    transform: scale(1.1); 
+    transition: transform 0.3s;
+}
+
+.team {
+    flex: 1;
+    max-width: calc(25% - 60px);
+    background-color: rgb(242, 242, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px
+}
+
+.team img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 20px;
+}
+
+.team-row {
+    width: 25%; 
+}
+
+@media (max-width: 768px) {
+    .team-row {
+        width: 50%; 
+    }
+}
+
+#error {
+    display: flex;
+    justify-content: center;
+}

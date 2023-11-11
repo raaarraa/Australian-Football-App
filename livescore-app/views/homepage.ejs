@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <title>AFL App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/hpstyle.css" />
+    <script src="/js/hpjs.js"></script>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <a class="not-this-one" href="/"><img id="afl" src="/images/AFL.png" alt="AFL Logo"/></a>
+        <label><button><a href="/standings">Standings</a></button></label>
+        <label><button><a href="/livescore">Live Score</a></button></label>
+        <label><button><a href="/games">Fixtures</a></button></label>
+      </nav>
+      <h1 class="titlu">MEET THE TEAMS!</h1>
+    </div>
+
+    <div class="team-container">
+      <% teams.forEach(function(team, index) { %>
+      <div class="team team-row">
+        <img src="/images/<%= team.name %>.svg" alt="<%= team.name %> Logo" />
+        <div class="popup">
+          <h2><%= team.name %></h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+            anim id est laborum. Lorem ispum ullamco velit.</p>
+        </div>
+      </div>
+      <% if ((index + 1) % 4 === 0) { %>
+    </div>
+    <div class="team-container"><% } %> <% }); %></div>
+    
+  </body>
+</html>

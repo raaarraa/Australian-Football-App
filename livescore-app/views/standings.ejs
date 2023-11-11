@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>AFL App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/ststyle.css">
+    <script src="stjs.js"></script>
+</head>
+<body>
+    <div>
+        <nav>
+          <a class="not-this-one" href="/"><img id="afl" src="/images/AFL.png" alt="AFL Logo"/></a>
+          <label><button><a href="/livescore">Live Score</a></button></label>
+          <label><button><a href="/games">Fixtures</a></button></label>
+        </nav>
+        <h1 class="titlu">STANDINGS</h1>
+      </div>
+      <div class="stands">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>Played</th>
+                    <th>Wins</th>
+                    <th>Draws</th>
+                    <th>Losses</th>
+                    <th>Total Points</th>
+                    <th>%</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.standings.forEach(team => { %>
+                    <tr>
+                        <td><%= team.rank %></td>
+                        <td id="team"><img src="/images/<%= team.name %>.svg"><%= team.name %></td>
+                        <td><%= team.played %></td>
+                        <td><%= team.wins %></td>
+                        <td><%= team.draws %></td>
+                        <td><%= team.losses %></td>
+                        <td><%= team.for %> : <%= team.against %></td>
+                        <td><%= team.percentage.toFixed(2) %></td>
+                        <td><%= team.pts %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+      </div>
+</body>
+</html>
